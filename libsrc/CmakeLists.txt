@@ -1,0 +1,26 @@
+Project(${PROJECT_NAME})
+
+set(SOURCES
+        libQJsonRPC/Private/http-parser/http_parser.c
+        libQJsonRPC/qjsonrpcabstractserver.cpp
+        libQJsonRPC/qjsonrpchttpclient.cpp
+        libQJsonRPC/qjsonrpchttpserver.cpp
+        libQJsonRPC/qjsonrpchttpservermultithreaded.cpp
+        libQJsonRPC/qjsonrpclocalserver.cpp
+        libQJsonRPC/qjsonrpcmessage.cpp
+        libQJsonRPC/qjsonrpcservice.cpp
+        libQJsonRPC/qjsonrpcserviceprovider.cpp
+        libQJsonRPC/qjsonrpcservicereply.cpp
+        libQJsonRPC/qjsonrpcsocket.cpp
+        libQJsonRPC/qjsonrpctcpserver.cpp
+)
+
+include_directories(${CMAKE_INCLUDE_CURRENT_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/libQJsonRPC/Private)
+
+
+# TODO
+#porting "include(../qmake/libConfigs.pri)"
+
+add_executable(qjsonRPC ${SOURCES})
+target_link_libraries(libQJsonRPC  ${Qt5Core_LIBRARIES})
