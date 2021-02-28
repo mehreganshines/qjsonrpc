@@ -14,9 +14,32 @@ set(SOURCES
         libQJsonRPC/qjsonrpctcpserver.cp
 )
 
-# INCLUDE HEADERS
-include_directories(${CMAKE_INCLUDE_CURRENT_DIR})
-include_directories(${PROJECT_SOURCE_DIR}/libQJsonRPC/Private)
+# Set DIST_HEADERS
+set(DIST_HEADERS
+        libQJsonRPC/qjsonrpcmessage.h
+        libQJsonRPC/qjsonrpcservice.h
+        libQJsonRPC/qjsonrpcsocket.h
+        libQJsonRPC/qjsonrpcserviceprovider.h
+        libQJsonRPC/qjsonrpcabstractserver.h
+        libQJsonRPC/qjsonrpclocalserver.h
+        libQJsonRPC/qjsonrpctcpserver.h
+        libQJsonRPC/qjsonrpcglobal.h
+        libQJsonRPC/qjsonrpcservicereply.h
+        libQJsonRPC/qjsonrpchttpclient.h
+        libQJsonRPC/qjsonrpchttpserver.h
+        libQJsonRPC/qjsonrpchttpservermultithreaded.h
+)
+
+# Set PRIVATE_HEADERS
+set(PRIVATE_HEADERS
+        libQJsonRPC/Private/qjsonrpcservice_p.h
+        libQJsonRPC/Private/qjsonrpcsocket_p.h
+        libQJsonRPC/Private/qjsonrpcabstractserver_p.h
+        libQJsonRPC/Private/qjsonrpcservicereply_p.h
+        libQJsonRPC/Private/qjsonrpchttpserver_p.h
+        libQJsonRPC/Private/http-parser/http_parser.h
+        libQJsonRPC/Private/qjsonrpchttpservermultithreaded_p.h
+)
 
 # Include libconfig.cmake module - INCOMPLETE
 include(${PROJECT_SOURCE_DIR}/cmake/libConfigs.make)
