@@ -19,4 +19,4 @@ include_directories(${CMAKE_INCLUDE_CURRENT_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/libQJsonRPC/Private)
 
 # Include libconfig.cmake module - INCOMPLETE
-include(${PROJECT_SOURCE_DIR}cmake/libConfigs.make)
+include(${PROJECT_SOURCE_DIR}/cmake/libConfigs.make)
