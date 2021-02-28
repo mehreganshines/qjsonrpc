@@ -1,5 +1,4 @@
-Project(${PROJECT_NAME})
-
+# Set SOURCES
 set(SOURCES
         libQJsonRPC/Private/http-parser/http_parser.c
         libQJsonRPC/qjsonrpcabstractserver.cpp
@@ -12,15 +11,12 @@ set(SOURCES
         libQJsonRPC/qjsonrpcserviceprovider.cpp
         libQJsonRPC/qjsonrpcservicereply.cpp
         libQJsonRPC/qjsonrpcsocket.cpp
-        libQJsonRPC/qjsonrpctcpserver.cpp
+        libQJsonRPC/qjsonrpctcpserver.cp
 )
 
+# INCLUDE HEADERS
 include_directories(${CMAKE_INCLUDE_CURRENT_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/libQJsonRPC/Private)
 
-
-# TODO
-#porting "include(../qmake/libConfigs.pri)"
-
-add_executable(qjsonRPC ${SOURCES})
-target_link_libraries(libQJsonRPC  ${Qt5Core_LIBRARIES})
+# Include libconfig.cmake module - INCOMPLETE
+include(${PROJECT_SOURCE_DIR}cmake/libConfigs.make)
