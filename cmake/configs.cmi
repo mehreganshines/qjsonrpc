@@ -48,24 +48,24 @@ SET(CMAKE_CXX_FLAGS_DEBUG  "-fPIC")
 
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
 include_directories(
-        $$PRJ_BASE_DIR
-        $$PRJ_BASE_DIR/src
-        $$PRJ_BASE_DIR/libsrc
-        $$BaseLibraryIncludeFolder
-        $$PREFIX/include
-        $(HOME)/local/include
-        $$DependencyIncludePaths
+	$$PRJ_BASE_DIR
+	$$PRJ_BASE_DIR/src
+	$$PRJ_BASE_DIR/libsrc
+	$$BaseLibraryIncludeFolder
+	$$PREFIX/include
+	$(HOME)/local/include
+	$$DependencyIncludePaths
 )
 
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
 set(DependencyLibPaths
-        $$BaseLibraryFolder
-        $$PRJ_BASE_DIR/out/lib64
-        $$PRJ_BASE_DIR/out/lib
-        $$PREFIX/lib64
-        $$PREFIX/lib
-        $(HOME)/local/lib
-        $(HOME)/local/lib64
+	$$BaseLibraryFolder
+	$$PRJ_BASE_DIR/out/lib64
+	$$PRJ_BASE_DIR/out/lib
+	$$PREFIX/lib64
+	$$PREFIX/lib
+	$(HOME)/local/lib
+	$(HOME)/local/lib64
 
 )
 
