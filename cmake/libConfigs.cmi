@@ -1,0 +1,31 @@
+################################################################################
+#   QBuildSystem
+#
+#   Copyright(c) 2021 by Targoman Intelligent Processing <http://tip.co.ir>
+#
+#   Redistribution and use in source and binary forms are allowed under the
+#   terms of BSD License 2.0.
+################################################################################
+###*
+include(${PROJECT_SOURCE_DIR/configs.cmi})
+
+###*
+
+
+#INCOMPLETE
+SET(CMAKE_CXX_FLAGS_RELEASE "-fPIC")
+SET(CMAKE_CXX_FLAGS_DEBUG  "-fPIC")
+
+###* 7
+
+set(HEADERS
+	$$DIST_HEADERS
+	$$PRIVATE_HEADERS
+	$$SUBMODULE_HEADERS
+)
+
+set(DESTDIR $$BaseLibraryFolder)
+
+###*
+
+include(${PROJECT_SOURCE_DIR/install.cmi})
