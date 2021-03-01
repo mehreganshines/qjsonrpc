@@ -1,0 +1,89 @@
+################################################################################
+#   QBuildSystem
+#
+#   Copyright(c) 2021 by Targoman Intelligent Processing <http://tip.co.ir>
+#
+#   Redistribution and use in source and binary forms are allowed under the
+#   terms of BSD License 2.0.
+################################################################################
+set(PRJ_BASE_DIR "${CMAKE_CURRENT_BINARY_DIR}")
+set(${PRJ_BASE_DIR}/version.pri)
+if(EXISTS "${VersionFile}")
+message("Found the VersionFile")
+else()
+message(FATAL_ERROR "**** libsrc: Unable to find version info file ${VersionFile} ****")
+endif()
+include(${VersionFile})
+
+#INCOMPLETE
+if(NOT DEFINED ProjectName)
+message(FATAL_ERROR "ProjectName not specified")
+endif()
+
+if(NOT DEFINED VERSION)
+message(FATAL_ERROR "ProjectVERSION not specified")
+endif()
+
+if(NOT DEFINED CMAKE_PREFIX_PATH)
+set(CMAKE_PREFIX_PATH "~/local")
+endif()
+
+if(NOT DEFINED DONT_BUILD_DEPS)
+set(DONT_BUILD_DEPS 0)
+endif()
+
+#TODO
+#CONFIG(debug, debug|release): DEFINES += TARGOMAN_SHOW_DEBUG=1
+#CONFIG(release){
+#
+
+#INCOMPLETE
+SET(CMAKE_CXX_FLAGS_RELEASE "-fPIC")
+SET(CMAKE_CXX_FLAGS_DEBUG  "-fPIC")
+
+#TODO - DEFINES += PROJ_VERSION=$$VERSION
+
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
+#TODO
+
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
+include_directories(
+        $$PRJ_BASE_DIR
+        $$PRJ_BASE_DIR/src
+        $$PRJ_BASE_DIR/libsrc
+        $$BaseLibraryIncludeFolder
+        $$PREFIX/include
+        $(HOME)/local/include
+        $$DependencyIncludePaths
+)
+
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
+set(DependencyLibPaths
+        $$BaseLibraryFolder
+        $$PRJ_BASE_DIR/out/lib64
+        $$PRJ_BASE_DIR/out/lib
+        $$PREFIX/lib64
+        $$PREFIX/lib
+        $(HOME)/local/lib
+        $(HOME)/local/lib64
+
+)
+
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
+#TODO
+
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
+#TODO
+
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-
+message("*******************   $$ProjectName BASE CONFIG  ************************ ")
+message("* Building $$ProjectName Ver. $$VERSION")
+message("* Base Project Path :  $$absolute_path(..)")
+message("* Base build target : $$PRJ_BASE_DIR/out")
+message("* Install Path      : $$PREFIX/")
+message("* Definitions       : $$DEFINES")
+message("* DONT_BUILD_DEPS   : $$DONT_BUILD_DEPS")
+message("* DISABLED_DEPS     : $$DISABLED_DPES")
+message("******************************************************************** ")
+
+#TODO
